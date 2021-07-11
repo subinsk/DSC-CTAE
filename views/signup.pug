@@ -5,8 +5,23 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/css/signup.css")
+        link(rel="icon" type="image/ico"  href="/images/favicon1.ico")
+        link(rel="icon" type="image/ico"  href="/images/favicon.ico")
+        link(rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png")
+        link(rel="manifest" href="/site.webmanifest")
         title Signup
     body
+        header 
+            div.navbar2.auto_fix 
+                div#logo
+                    img(src="/images/LOGO_DSC.svg", alt="DSC_LOGO")
+                ul 
+                    li.nav2_btns Home
+                    li.nav2_btns About
+                    li.nav2_btns Dashboard
+
         div.card 
             form(action="/signup", method="POST") 
                 h2.title Sign Up
@@ -29,3 +44,9 @@ html(lang="en")
                         b Password
                     input(type="password" placeholder="Enter Password" name="psw" required)
                 button.cta-btn Sign Up
+        footer 
+            div.f_cont 
+                span Copyright &copy;&nbsp;
+                span#year
+        
+        script(src="/js/index.js")

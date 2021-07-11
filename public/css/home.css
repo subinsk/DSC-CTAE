@@ -1,7 +1,9 @@
 .intro_cont{
     height: 100vh;
     width: auto;
-    background-color: orange;
+    background-image: url('/images/bimg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     display: flex;
     flex-direction: column;
@@ -38,10 +40,50 @@
 }
 
 .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 33rem;
     height: 27rem;
     padding: 1rem;
     margin: 0.5rem;
     border-radius: 1rem;
     box-shadow: 1px 1px 1px 1px  rgba(0, 0, 0, 0.301);
+}
+
+.con_img{
+    width: 20rem;
+    height: auto;
+    margin: 0.2rem;
+}
+.card p{
+    padding: 1.3rem;
+}
+
+.enroll{
+    background-image: url('/images/enroll.jpg');
+    background-size: cover;
+    width: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#enroll_btn{
+    font-size: 2rem;
+    padding: 0.8rem;
+    margin: 1.4rem;
+    background-color: orange;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: 0.3s;
+  
+    
+}
+#enroll_btn:hover{
+    color: orange;
+    background-color: white;
 }
