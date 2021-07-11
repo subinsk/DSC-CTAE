@@ -1,0 +1,49 @@
+.intro_cont{
+    height: 100vh;
+    width: auto;
+    background-color: orange;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro_cont span {
+    font-size: 6rem;
+}
+.intro_cont p {
+    font-size: 4rem;
+}
+
+#ic_1{
+    font-size: 3rem ;
+}
+#ic_2{
+    font-size: 2.5rem;
+}
+#ic_3{
+    font-size: 2rem;
+}
+
+.home_cont{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+
+}
+
+.card{
+    width: 33rem;
+    height: 27rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 1px 1px  rgba(0, 0, 0, 0.301);
+}

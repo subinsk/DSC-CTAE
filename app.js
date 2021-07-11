@@ -20,12 +20,28 @@ app.get("/",(req,res)=>{
         title: 'Home'
     });
 });
-
-app.get('/courses',(req,res)=>{
-    res.render('courses',{
-        title:'Courses'
+app.get("/login",(req,res)=>{
+    res.render('login',{
+        title: 'Login'
     });
 });
+app.get("/signup",(req,res)=>{
+    res.render('signup',{
+        title: 'Signup'
+    });
+});
+app.get("/about",(req,res)=>{
+    res.render('about',{
+        title: 'About'
+    });
+});
+app.get("/dashboard",(req,res)=>{
+    res.render('dashboard',{
+        title: 'Dashboard'
+    });
+});
+
+
 
 app.listen(port,()=>{
     console.log(`The application started successfully on port ${port}`);

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/subinsk/DSC-CTAE#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.9",
+    "pug": "^3.0.2"
   }
 }

@@ -1,8 +1,20 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title | DSC-CTAE
-    body 
+extends index.pug
+
+block css 
+    link(rel="stylesheet", href="/css/home.css")
+block js 
+    script(src="/js/home.js") 
+
+
+block home
+    div.intro_cont 
+        span DSC-CTAE
+        p#ic_1 Developer Student Club 
+        p#ic_2 CTAE, Udaipur 
+        p#ic_3 A place where oppurtunities are found and future is made
+    
+    div.home_cont 
+        div.cards
+            div.card Card 1
+            div.card Card 2
+            div.card Card 3

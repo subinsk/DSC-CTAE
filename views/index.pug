@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/index.css")
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
+        block css 
+        block js 
+        title #{title} | DSC-CTAE
+    body 
+        header 
+            div.navbar1.auto_fix
+                div.nav1_btns
+                    div.login_btn Login
+                    div.signup_btn Signup
+            div.navbar2.auto_fix 
+                div#logo
+                    img(src="/images/LOGO_DSC.svg", alt="DSC_LOGO")
+                ul 
+                    li.nav2_btns Home
+                    li.nav2_btns About
+                    li.nav2_btns Dashboard
+        
+        block home 
+        block about 
+
+        footer 
+            div.f_cont 
+                span Copyright &copy;&nbsp;
+                span#year
+        
+        script(src="/js/index.js") 

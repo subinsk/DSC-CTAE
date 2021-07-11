@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.auto_fix{
+    padding: 0.7rem;
+}
+.navbar1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: whitesmoke;
+
+}
+.nav1_btns{
+    display: flex;
+    flex-direction: row;
+    justify-content:right;
+    
+}
+.login_btn{
+    color: orange;
+    padding: 0.8rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+.signup_btn{
+    padding: 0.8rem;
+    color: white;
+    border-radius: 0.6rem;
+    background-color: orange;
+    cursor: pointer;
+}
+
+.navbar2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+#logo{
+    width: 6rem;
+    height: auto;
+    
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+
+}
+li{
+    list-style: none;
+    color: orange;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+}
+.f_cont{
+    padding: 1.4rem;
+    color: white;
+    
+
+}
