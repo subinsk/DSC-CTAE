@@ -9,15 +9,13 @@
     align-items: center;
 }
 
-.intro_cont span {
-    font-size: 6rem;
-}
+
 .intro_cont p {
     font-size: 4rem;
 }
 
 #ic_1{
-    font-size: 3rem ;
+    font-size: 6rem ;
 }
 #ic_2{
     font-size: 2.5rem;
