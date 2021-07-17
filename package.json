@@ -2,7 +2,7 @@
   "name": "dsc-ctae",
   "version": "1.0.0",
   "description": "A website of DSC-CTAE ",
-  "main": "app.js conn.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
