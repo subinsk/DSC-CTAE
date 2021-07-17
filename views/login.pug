@@ -10,6 +10,7 @@ html(lang="en")
         link(rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png")
         link(rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png")
         link(rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png")
+        link(rel="stylesheet", href="bower_components/bootstrap/dist/css/bootstrap.css")
         link(rel="manifest" href="/site.webmanifest")
         title Login
     body
@@ -22,7 +23,7 @@ html(lang="en")
                     li.nav2_btns About
                     li.nav2_btns Dashboard
         div.card 
-            form(action="/", method="post") 
+            form(action="/login", method="POST") 
                 h2.title Log in
                 p.subtitle Don't have an account?&nbsp;
                     a#signup_btn(href="/signup") Sign Up   
@@ -33,12 +34,13 @@ html(lang="en")
                 p.or
                     span or
                 div.email-login
+                    include ../views/partials/messages
                     label(for="email")
                         b Email
-                    input(type="text" placeholder="Enter Email" name="uname" required)
-                    label(for="psw")
+                    input(type="email" placeholder="Enter Email" name="email" value=typeof(email)!=undefined?email:'' required)
+                    label(for="password")
                         b Password
-                    input(type="password" placeholder="Enter Password" name="psw" required)
+                    input(type="password" placeholder="Enter Password" name="password" value=typeof(password)!=undefined?password:'' required)
                 button.cta-btn Log In
                 a.forget-pass(href="#") Forgot Password
         footer 

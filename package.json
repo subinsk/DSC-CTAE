@@ -2,7 +2,7 @@
   "name": "dsc-ctae",
   "version": "1.0.0",
   "description": "A website of DSC-CTAE ",
-  "main": "app.js",
+  "main": "app.js conn.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +17,20 @@
   },
   "homepage": "https://github.com/subinsk/DSC-CTAE#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bower": "^1.8.12",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.9",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.13.3",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0",
     "pug": "^3.0.2"
   }
 }

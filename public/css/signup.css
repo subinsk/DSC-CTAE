@@ -147,7 +147,7 @@ footer{
     color: rgb(170 166 166);
   }
   
-  input[type="text"],
+  input[type="text"],input[type="email"],
   input[type="password"] {
     padding: 15px 20px;
     margin-top: 8px;
