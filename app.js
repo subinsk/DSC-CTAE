@@ -44,6 +44,7 @@ app.use((req,res,next)=>{
 
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/users'));
+app.use('/', require('./routes/dashboard'));
 
 app.listen(port, () => {
     console.log(`The application started successfully on port ${port}`);
