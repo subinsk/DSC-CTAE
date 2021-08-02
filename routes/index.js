@@ -13,11 +13,5 @@ router.get("/about", (req, res) => {
         title: 'About'
     });
 });
-router.get('/dashboard',(req,res)=>{
-    res.render('dashboard',{
-        user: req.user.name
-    })
-    res.render('dashboard');
-})
 
 module.exports = router;

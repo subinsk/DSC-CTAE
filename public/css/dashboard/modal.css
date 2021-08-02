@@ -1,0 +1,131 @@
+/* CSS for Modal */
+.modal {
+  display: none;
+  position: fixed;
+  left: 25vw;
+  top: 16vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  align-content: space-between;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 80%;
+  overflow: scroll;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  border-radius: 10px;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+hr{
+  color: rgb(207, 207, 207);
+}
+
+.modal-header {
+  display: block;
+  width: 100%;
+}
+
+.modal-header h1 {
+  display: inline-block;
+  margin: 2% 0;
+  margin-left: 24%;
+  width: 60%;
+}
+
+.modal-header span {
+  float: right;
+  padding: 2.5%;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  width: 75%;
+}
+.close-btn {
+  float: right;
+  color: lightgray;
+  font-size: 32px;
+  font-weight: bold;
+}
+.close-btn:hover {
+  color: darkgray;
+}
+
+/* Modal Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* Modal form */
+.update-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-profile label {
+  color: rgb(170 166 166);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 15px 20px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.cta-btn {
+  background-color: rgb(255, 164, 38);
+  color: white;
+  padding: 18px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+
+/* messages CSS */
+#message{
+  display: none;
+  margin-bottom: 1rem;
+}
+
+#message ul{
+  flex-direction: column;
+}
+
+#message ul li{
+  margin: 0 2rem;
+  padding: 0.3rem 0rem;
+  font-size: 1rem; 
+  list-style: none;
+}

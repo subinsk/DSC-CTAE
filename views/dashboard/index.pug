@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+<<<<<<< HEAD:views/dashboard.pug
+        include ../views/partials/favicon
+        title Dashboard
+    body 
+        h1 Logged In
+        p Welcome #{user}
+        a(href="/logout") Logout 
+        block myprojects
+        
+=======
+        link(rel="icon" type="image/ico"  href="/images/favicon1.ico")
+        link(rel="icon" type="image/ico"  href="/images/favicon.ico")
+        link(rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png")
+        link(rel="stylesheet", href="/css/dashboard/index.css")
+        link(rel="stylesheet", href="/css/dashboard/modal.css")
+        link(rel="manifest" href="/site.webmanifest")
+        block css
+        title Dashboard
+    body 
+        header 
+            div.navbar2.auto_fix 
+                div#logo
+                    img(src="/images/LOGO_DSC.svg", alt="DSC_LOGO")
+
+                h3#navbar-heading #{navbarHeading}
+
+                ul 
+                    li.nav2_btns 
+                        button#modal-btn Update Your Profile
+                    li.nav2_btns 
+                        a(href='/logout') Logout 
+
+        include ./partials/modal
+        block content
+
+    script(type='text/javascript' src='/js/dashboard/index.js')
+>>>>>>> d7e447eb46f66731dd65d16011b1c3bdb33856ed:views/dashboard/index.pug

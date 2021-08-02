@@ -113,6 +113,7 @@ router.get('/logout',(req,res)=>{
     req.logout();
     req.flash('success_msg','You are successfully logged out');
     res.redirect('/login');
+<<<<<<< HEAD
 })
 router.get('/forgot', function(req, res) {
     res.render('forgot', {
@@ -171,5 +172,8 @@ router.post('/forgot', function(req, res, next) {
     });
   });
 
+=======
+});
+>>>>>>> d7e447eb46f66731dd65d16011b1c3bdb33856ed
 
 module.exports=router;

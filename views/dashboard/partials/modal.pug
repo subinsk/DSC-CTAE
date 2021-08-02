@@ -1,0 +1,27 @@
+.modal 
+    .modal-header
+        h1 Update Your Profile
+        span.close-btn &times;
+
+    hr
+
+    .modal-content
+        div#message
+            ul 
+        form(action="/dashboard", method="POST" name="UpdateProfileForm" id="UpdateProfileForm") 
+            div.update-profile
+                include ../../partials/messages
+                label(for="name")
+                    b Name
+                input(type="text" name="name" id="name" value=user required)
+                label(for="email")
+                    b Email
+                input(type="email" name="email" id="email" value=email required)
+                label(for="password")
+                    b Password
+                input(type="password" name="password" id="password" value=password required)
+                label(for="password2")
+                    b Confirm Password
+                input(type="password" name="password2" id="password2" value=password required)
+            button.cta-btn
+                input(type="submit", value="Submit")
