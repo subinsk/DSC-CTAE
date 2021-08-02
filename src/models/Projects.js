@@ -5,7 +5,7 @@ const ProjectSchema= new mongoose.Schema({
         type: String,
         required: true
     },
-    email:{
+    username: {
         type: String,
         required: true
     },
@@ -23,11 +23,6 @@ const ProjectSchema= new mongoose.Schema({
         required: true
     },
     projectsubmitdate:{
-        type: Date,
-        default: Date.now,
-        required: true
-    },
-    date:{
         type: Date,
         default: Date.now,
         required: true
