@@ -90,17 +90,21 @@ hr{
   color: rgb(170 166 166);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+input, select{
   padding: 15px 20px;
   margin-top: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box;
+  outline: none;
 }
 
+input[type='submit']{
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .cta-btn {
   background-color: rgb(255, 164, 38);
   color: white;

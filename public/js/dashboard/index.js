@@ -16,6 +16,7 @@ closeBtn.onclick = function () {
 // Adding values in session storage
 sessionStorage.setItem('name',document.getElementById('name').value);
 sessionStorage.setItem('email',document.getElementById('email').value);
+sessionStorage.setItem('username',document.getElementById('username').value);
 
 // Validating form data
 let form = document.getElementById("UpdateProfileForm");
@@ -23,14 +24,18 @@ let form = document.getElementById("UpdateProfileForm");
 form.addEventListener('submit', (event)=>{
   event.preventDefault();
   let formName = document.getElementById('name').value;
+  let formUsername = document.getElementById('username').value;
   let formEmail = document.getElementById('email').value;
+  let formGender = document.getElementById('gender').value;
+  let formMobileno = document.getElementById('mobileno').value;
+  let formDob = document.getElementById('dob').value;
   let formPassword = document.getElementById('password').value;
   let formPassword2 = document.getElementById('password2').value;
 
   let errors=[];
 
   // Check required
-  if(!formName || !formEmail || !formPassword || !formPassword2){
+  if(!formName || !formUsername || !formEmail || !formPassword || !formPassword2){
     errors.push({ msg: "Please fill in all fields"});
   }
 
@@ -58,7 +63,7 @@ form.addEventListener('submit', (event)=>{
   }
 
   else{
-    if(formEmail!=sessionStorage.getItem('email')){
+    if(formEmail!=sessionStorage.getItem('email') && formUsername!=sessionStorage.getItem('username')){
       if (window.XMLHttpRequest) {
         // code for modern browsers
         var httpRequest = new XMLHttpRequest();
@@ -81,22 +86,22 @@ form.addEventListener('submit', (event)=>{
             message_list[0].innerHTML='<li>'+error+'</li>';
           }
           else{
-            formSubmit(formName, formEmail, formPassword);
+            formSubmit(formName, formUsername, formEmail, formGender, formMobileno, formDob, formPassword);
           }
         }
       }
 
       httpRequest.open('POST','/checkfields?t='+Math.random(),true);
       httpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      httpRequest.send(`email=${formEmail}`);
+      httpRequest.send(`email=${formEmail}&username=${formUsername}`);
     }
     else{
-      formSubmit(formName, formEmail, formPassword);
+      formSubmit(formName, formUsername, formEmail, formGender, formMobileno, formDob, formPassword);
     }
   }
 });
 
-function formSubmit(name, email, password){
+function formSubmit(name, username, email, gender, mobileno, dob, password){
   if (window.XMLHttpRequest) {
     // code for modern browsers
     var httpRequest2 = new XMLHttpRequest();
@@ -120,11 +125,12 @@ function formSubmit(name, email, password){
         // Updating Session storage variables
         sessionStorage.setItem('name',document.getElementById('name').value);
         sessionStorage.setItem('email',document.getElementById('email').value);
+        sessionStorage.setItem('username',document.getElementById('username').value);
 
     }
   }
 
   httpRequest2.open('POST','/dashboard',true);
   httpRequest2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  httpRequest2.send(`name=${name}&email=${email}&password=${password}`);
+  httpRequest2.send(`name=${name}&username=${username}&email=${email}&gender=${gender}&mobileno=${mobileno}&dob=${dob}&password=${password}`);
 }

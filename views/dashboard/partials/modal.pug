@@ -13,15 +13,31 @@
                 include ../../partials/messages
                 label(for="name")
                     b Name
-                input(type="text" name="name" id="name" value=user required)
+                input(type="text" name="name" id="name" value=name required)
+                label(for="username")
+                    b Username
+                input(type="text" name="username" id="username" value=username required)
                 label(for="email")
                     b Email
                 input(type="email" name="email" id="email" value=email required)
+                label(for="gender")
+                    b Gender 
+                select(name="gender" id="gender")
+                    option(value='' disabled hidden selected) Gender
+                    option(value='male') Male
+                    option(value='female') Female
+                label(for="mobileno")
+                    b Mobile No.
+                input(type="tel" name="mobileno" id="mobileno" pattern='[0-9]{10}' value=mobileno)
+                label(for="dob")
+                    b Date Of Birth
+                input(type="date" name="dob" id="dob" value=dob)
                 label(for="password")
                     b Password
                 input(type="password" name="password" id="password" value=password required)
                 label(for="password2")
                     b Confirm Password
                 input(type="password" name="password2" id="password2" value=password required)
+                
             button.cta-btn
                 input(type="submit", value="Submit")

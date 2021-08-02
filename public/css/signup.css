@@ -147,6 +147,7 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 8px;
   box-sizing: border-box;
+  outline: none;
 }
 
 .cta-btn {

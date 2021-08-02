@@ -23,11 +23,11 @@ router.get("/signup", (req, res) => {
 
 // Register Handle
 router.post('/signup',(req, res)=> {
-    const {name, email, password,password2}=req.body;
+    const {name, username, email, password,password2}=req.body;
     let errors=[];
 
     // Check required
-    if(!name || !email || !password || !password2){
+    if(!name || !username || !email || !password || !password2){
         errors.push({ msg: "Please fill in all fields"});
     }
 
@@ -70,34 +70,50 @@ router.post('/signup',(req, res)=> {
             
             else
             {
-                const newUser = new User({
-                    name,
-                    email,
-                    password
-                });
-                
-                
-                // Hash Password
-                bcrypt.genSalt(10, (err, salt)=> 
-                    bcrypt.hash(newUser.password,salt,(err, hash)=> {
-                        if(err) throw err;
+                User.findOne({ username: username})
+                .then(user => {
+                    if(user){
+                        // if user exists
+                        errors.push({msg: 'Username is already registered'});
+                        res.render('signup',{
+                            errors,
+                            name, 
+                            email,
+                            password,
+                            password2
+                        });
+                    } 
+                    else{
                         
-                        // Set password to hash
-                        newUser.password=hash;
-                        
-                        // Save user
-                        newUser.collection.insertOne(newUser)
-                        .then(user => {
-                            req.flash('success_msg',"You are successfully registered! Login Now")
-                            res.redirect('/login')
+                        const newUser = new User({
+                            name,
+                            username,
+                            email,
+                            password
+                        });
+                
+                        // Hash Password
+                        bcrypt.genSalt(10, (err, salt)=> {
+                            bcrypt.hash(newUser.password,salt,(err, hash)=> {
+                                if(err) throw err;
+                                
+                                // Set password to hash
+                                newUser.password=hash;
+                                
+                                // Save user
+                                newUser.collection.insertOne(newUser)
+                                .then(user => {
+                                    req.flash('success_msg',"You are successfully registered! Login Now")
+                                    res.redirect('/login')
+                                    })
+                                .catch(err => console.log(err));
                             })
-                        .catch(err => console.log(err));
-                    })
-                )
-            }
+                        })
+                    }
+                });
+            }    
         });
     }
-    
 });
 
 

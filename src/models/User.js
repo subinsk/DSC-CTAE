@@ -19,11 +19,11 @@ const UserSchema= new mongoose.Schema({
     gender: {
         type: String
     },
-    phonenumber: {
+    mobileno: {
         type: String
     },
     dateofbirth: {
-        type: Date
+        type: String
     },
     password:{
         type: String,
