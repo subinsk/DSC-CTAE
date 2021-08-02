@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/forgot.css")
+        include ../views/partials/favicon
+        link(rel="stylesheet", href="bower_components/bootstrap/dist/css/bootstrap.css")
+        script(async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2789858507890186" crossorigin="anonymous")
+        title Forgot Password
+    body
+        header 
+            div.navbar2.auto_fix 
+                div#logo
+                    img(src="/images/LOGO_DSC.svg", alt="DSC_LOGO")
+                ul 
+                    li.nav2_btns Home
+                    li.nav2_btns About
+                    li.nav2_btns Dashboard
+        div.card 
+            form(action="/login", method="POST") 
+                h2.title Forgot Password
+                button#login
+                    a(href="/login") Login 
+                button#signup
+                    a(href="/signup") Signup 
+                label(for="email")
+                    b Email
+                input(type="email" name="email" placeholder="Enter email" value=typeof(email)!=undefined?email: '' required) 
+                button(type="submit") Send Verification Mail
+        footer 
+            div.f_cont 
+                span Copyright &copy;&nbsp;
+                span#year
+        
+    script(src="/js/index.js")

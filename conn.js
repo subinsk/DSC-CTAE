@@ -6,14 +6,14 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
-  const collection = client.db("users").collection("userData");
+  const collection = client.db("users").collection("DSC");
   console.log("Mongodb connected successfully")
 });
 
 mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true })
   .then(()=> {
     console.log('mongodb connected...')
-    const collection = client.db("users").collection("userData");
+    const collection = client.db("users").collection("DSC");
     })
   .catch(err=>console.log(err));
 

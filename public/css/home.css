@@ -32,33 +32,88 @@
 
 }
 
-.cards{
-    display: flex;
-    flex-direction: row;
-    padding: 2rem;
 
+/* Slideshow */
+
+.slideshow{
+    max-width: 95%;
+    margin: auto;
+    
 }
 
-.card{
-    display: flex;
+.slide{
+    display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 33rem;
-    height: 27rem;
-    padding: 1rem;
-    margin: 0.5rem;
-    border-radius: 1rem;
-    box-shadow: 1px 1px 1px 1px  rgba(0, 0, 0, 0.301);
 }
 
 .con_img{
-    width: 20rem;
+    display: block;
+    width: 60%;
     height: auto;
-    margin: 0.2rem;
+    align-content: center;
+    
 }
-.card p{
-    padding: 1.3rem;
+h3{
+    position: relative;
+    top: 65px;
 }
+p{
+    position: relative;
+    bottom: 20px;  
+}
+.prev, .next{
+    position: absolute;
+    bottom: 50%;
+    cursor: pointer;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  .line {
+    cursor: pointer;
+    height: 3px;
+    width: 50px;
+    margin: 0 2px;
+    background-color: #bbb;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
 
 .enroll{
     background-image: url('/images/enroll.jpg');

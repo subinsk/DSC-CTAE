@@ -13,20 +13,27 @@ block home
         p#ic_3 A place where oppurtunities are found and future is made
     
     div.home_cont 
-        div.cards
-            div.card 
+        //- include ../views/partials/carousels.pug
+        div.slideshow
+            div.slide
                 h3 What we do?
                 img(src="/images/contest.jpg", alt="#").con_img
                 p We encourage students to participate in different contests and hackathons.
-            div.card 
+            div.slide 
                 h3 What we have?
                 img(src="/images/mentor.jpg", alt="#").con_img
                 p An awesome team of Mentors and Supporters for the club members to help them in every point of their programming journey.
-            div.card 
+            div.slide 
                 h3 Why we do?
                 img(src="/images/community.jpg", alt="#").con_img
                 p For the betterment of our student community and to provide them the best oppurtunities and guidance.
-        
+            a.prev(onclick='plusSlides(-1)') &#10094;
+            a.next(onclick='plusSlides(1)') &#10095;
+            div(style='text-align:center')
+                span.line(onclick='currentSlide(1)')
+                span.line(onclick='currentSlide(2)')
+                span.line(onclick='currentSlide(3)')        
         div.enroll
             h1 So, what are you waiting for, enroll now! 
             div#enroll_btn Enroll
+    script(src="/js/home.js") 

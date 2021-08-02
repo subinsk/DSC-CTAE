@@ -29,6 +29,7 @@ app.use(passport.session());
 
 // flash
 app.use(flash());
+
 // views
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
