@@ -31,4 +31,14 @@ html(lang="en")
         include ./partials/modal
         block content
         
-    block javascript
+    script(type='text/javascript' src='/js/dashboard/index.js')
+    script.
+        let genderSelect = document.getElementById('gender')
+        let genderDefaultValue = `#{ gender }`;
+
+        for(let i,j=0; i = genderSelect.options[j]; ++j){
+            if(i.value === genderDefaultValue){
+            genderSelect.selectedIndex = j;
+            break;
+            }
+        }

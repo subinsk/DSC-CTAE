@@ -3,16 +3,3 @@ extends index.pug
 block content 
     a(href='/dashboard/myprojects') My projects
     a(href='/dashboard/mycontestsubmissions') My Contest Submissions
-
-block javascript
-    script(type='text/javascript' src='/js/dashboard/index.js')
-    script.
-        let genderSelect = document.getElementById('gender')
-        let genderDefaultValue = `#{ gender }`;
-
-        for(let i,j=0; i = genderSelect.options[j]; ++j){
-            if(i.value === genderDefaultValue){
-            genderSelect.selectedIndex = j;
-            break;
-            }
-        }
