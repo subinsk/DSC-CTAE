@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
+const fs = require('fs');
+const path = require('path');
 
 const UserSchema= new mongoose.Schema({
     profilepic: {
-        type: String
+        data: Buffer,
+        contentType: String
     },
     name:{
         type: String,

@@ -22,7 +22,7 @@
   animation-duration: 0.4s;
 }
 
-hr{
+hr {
   color: rgb(207, 207, 207);
 }
 
@@ -84,13 +84,15 @@ hr{
 .update-profile {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .update-profile label {
   color: rgb(170 166 166);
 }
 
-input, select{
+input,
+select {
   padding: 15px 20px;
   margin-top: 8px;
   margin-bottom: 15px;
@@ -100,11 +102,30 @@ input, select{
   outline: none;
 }
 
-input[type='submit']{
+input[type="submit"] {
   padding: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
+/* Profile Pic CSS */
+input[type="file"] {
+  display: none;
+}
+
+#profile{
+  display: flex;
+  justify-content: center;
+}
+
+#showprofilepic {
+  height: 6rem;
+  margin-bottom: 2rem;
+  border-radius: 15rem;
+  padding: 3px;
+  border: 2px solid black;
+}
+
 .cta-btn {
   background-color: rgb(255, 164, 38);
   color: white;
@@ -116,20 +137,19 @@ input[type='submit']{
   border: none;
 }
 
-
 /* messages CSS */
-#message{
+#message {
   display: none;
   margin-bottom: 1rem;
 }
 
-#message ul{
+#message ul {
   flex-direction: column;
 }
 
-#message ul li{
+#message ul li {
   margin: 0 2rem;
   padding: 0.3rem 0rem;
-  font-size: 1rem; 
+  font-size: 1rem;
   list-style: none;
 }

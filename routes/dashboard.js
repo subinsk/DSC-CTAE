@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const fs = require('fs');
+const path = require('path');
 
 // User model
 const User = require('../src/models/User')
 
+// Image Uploader
+const upload = require('../src/scripts/imageUploader')
+
 router.get('/dashboard',(req,res)=>{
     res.render('dashboard/dashboard',{
+        profilepic: req.user.profilepic,
         name: req.user.name,
         username: req.user.username,
         email: req.user.email,
@@ -20,7 +26,7 @@ router.get('/dashboard',(req,res)=>{
 
 
 router.post('/dashboard',(req,res)=>{
-    let {name, username, email, gender, mobileno, dob, password}=req.body;
+    let {name, username, email, gender, mobileno, dob, password} = req.body;
     const dbEmail = req.user.email;
     const dbPassword = req.user.password;
     
@@ -70,6 +76,30 @@ router.post('/checkfields',(req,res)=>{
         }
     });
     res.send(errors);
+});
+
+router.post('/profilepic',upload.single('profilepic'),(req,res)=>{
+    let img= {
+        data: fs.readFileSync(path.join(path.dirname(__dirname),'uploads/',req.file.filename)),
+        contentType: req.file.mimetype
+    };
+
+    let dbEmail = req.user.email;
+
+    // Update profile pic
+    User.updateOne({ email: dbEmail},{profilepic: img},(err,result)=>{
+        if(err){
+            res.send(err);
+        }
+        else{
+            res.redirect('/dashboard');
+            fs.unlink(path.join(path.dirname(__dirname),'uploads/',req.file.filename),(err)=>{
+                if(err){
+                    throw err;
+                }
+            });
+        }
+    });
 });
 
 router.get('/dashboard/myprojects',(req,res)=>{

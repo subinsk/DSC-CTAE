@@ -8,12 +8,15 @@
     .modal-content
         div#message
             ul 
+        form(action="/profilepic", method="POST" name="UpdateProfilePic" id="UpdateProfilePic" enctype="multipart/form-data") 
+            #profile
+                label(for='profilepic')
+                    img(src='' id='showprofilepic' alt='Your profile pic')
+                input(type='file' id='profilepic' name='profilepic' value='')
+
         form(action="/dashboard", method="POST" name="UpdateProfileForm" id="UpdateProfileForm") 
             div.update-profile
                 include ../../partials/messages
-                label(for='profilepic')
-                    img(src=imageurl alt='Your profile pic')
-                input(type='file' id='profilepic' name='profilepic')
                 label(for="name")
                     b Name
                 input(type="text" name="name" id="name" value=name required)

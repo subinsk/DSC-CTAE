@@ -1,11 +1,13 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs')
-const passport= require('passport')
-const local=require('../config/passport')
+const bcrypt = require('bcryptjs');
+const passport= require('passport');
+const local=require('../config/passport');
+const fs = require('fs');
+const path = require('path');
 
 // User model
-const User = require('../src/models/User')
+const User = require('../src/models/User');
 
 // Login page
 router.get("/login", (req, res) => {
@@ -24,6 +26,10 @@ router.get("/signup", (req, res) => {
 // Register Handle
 router.post('/signup',(req, res)=> {
     const {name, username, email, password,password2}=req.body;
+    let profilepic= {
+        data: fs.readFileSync(path.join(path.dirname(__dirname),'uploads/defaultprofilepic.jpg')),
+        contentType: 'image/jpg'
+    }
     let errors=[];
 
     // Check required
@@ -86,6 +92,7 @@ router.post('/signup',(req, res)=> {
                     else{
                         
                         const newUser = new User({
+                            profilepic,
                             name,
                             username,
                             email,

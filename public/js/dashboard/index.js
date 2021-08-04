@@ -134,3 +134,24 @@ function formSubmit(name, username, email, gender, mobileno, dob, password){
   httpRequest2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   httpRequest2.send(`name=${name}&username=${username}&email=${email}&gender=${gender}&mobileno=${mobileno}&dob=${dob}&password=${password}`);
 }
+
+
+
+// Showing Profile Pic 
+let profilePic = document.getElementById('profilepic');
+profilePic.addEventListener('input', event => {
+  let typeOfFile = event.target.files[0].type
+  if(typeOfFile=='image/jpeg' || typeOfFile=='image/png' || typeOfFile=='image/jpg'){
+    let form = document.getElementById('UpdateProfilePic');
+    form.submit();
+  }
+  else{
+    let message = document.getElementById('message');
+    message.style.display='block';
+    message.style.backgroundColor = 'rgb(202, 163, 163)';
+    message.style.border = '2px solid rgb(212, 67, 67)';
+    document.querySelector('#message ul').style.color = 'rgb(212, 67, 67)';
+    let message_list=message.children;
+    message_list[0].innerHTML='<li> Invalid file type. Please enter a jpg or png file. </li>';
+  }
+});

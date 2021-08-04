@@ -42,3 +42,7 @@ html(lang="en")
             break;
             }
         }
+
+        let showProfilePic = document.getElementById('showprofilepic');
+        let imgURL = `data:image/#{profilepic.contentType};base64,#{profilepic.data.toString('base64')}`;
+        showProfilePic.src = imgURL;
